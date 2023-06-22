@@ -10,8 +10,9 @@ def input_error(func):
     return inner
     
 @input_error   
-def add_contact(name): 
-    phone_book[name] = None  
+def add_contact(name_and_phone): 
+    name, phone = name_and_phone.split(' ')
+    phone_book[name] = int(phone)  
     
 @input_error    
 def change_contact(name_and_phone):  
